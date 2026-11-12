@@ -295,7 +295,14 @@ function displayFeedback() {
     list.appendChild(card);
   });
 }
-
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => console.log("Safe Haven offline mode ready"))
+      .catch(error => console.error("Service worker error:", error));
+  });
+}
 
 // 11. INITIALIZE APPLICATION
 
