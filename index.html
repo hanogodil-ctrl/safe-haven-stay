@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Haven | S.T.A.Y</title>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-icon">✦</span>
+    <div>
+      <h2>SAFE HAVEN</h2>
+      <small>S.T.A.Y — You Matter</small>
+    </div>
+  </div>
+  <button class="login-btn" onclick="showLogin()">Login</button>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="welcome">
+    <p class="eyebrow">YOUR PERSONAL SAFETY COMPANION</p>
+    <h1>You deserve to feel <span>SAFE.</span></h1>
+    <p>Stay connected. Stay protected. You are never alone.</p>
+  </div>
+
+  <div class="sos-container">
+    <div class="pulse"></div>
+    <button class="sos-button" onclick="activateSOS()">
+      S.O.S
+      <small>EMERGENCY</small>
+    </button>
+    <p>Tap for emergency assistance</p>
+  </div>
+
+  <div class="location-card">
+    <div>
+      <h3>📍 Your Location</h3>
+      <p id="locationStatus">Location not requested</p>
+    </div>
+    <button onclick="getLocation()">Get Location</button>
+  </div>
+
+  <div class="quick-grid">
+    <button onclick="showPage('contacts')">
+      <span>♙</span>
+      Trusted Contacts
+    </button>
+    <button onclick="shareLocation()">
+      <span>⌖</span>
+      Share Location
+    </button>
+    <button onclick="showPage('safety')">
+      <span>✧</span>
+      Safety Tips
+    </button>
+    <button onclick="showPage('help')">
+      <span>?</span>
+      Help & Guide
+    </button>
+  </div>
+
+  <div class="notice">
+    <span>✦</span>
+    Your safety matters. Your information stays private
+    unless you choose to share it.
+  </div>
+</section>
+
+
+<!-- TRUSTED CONTACTS -->
+<section id="contacts" class="page">
+
+  <div class="section-heading">
+    <p class="eyebrow">YOUR SAFETY NETWORK</p>
+    <h1>Trusted <span>Contacts</span></h1>
+    <p>Add people you trust and want to contact in an emergency.</p>
+  </div>
+
+  <div class="panel">
+    <h3>＋ Add New Contact</h3>
+
+    <input id="contactName" type="text"
+      placeholder="Enter contact name">
+
+    <input id="contactPhone" type="tel"
+      placeholder="Enter phone number">
+
+    <button class="primary-btn" onclick="addContact()">
+      Add Contact
+    </button>
+  </div>
+
+  <h3 class="subheading">My Trusted People</h3>
+  <div id="contactList" class="contact-list">
+    <p class="empty">No contacts added yet.</p>
+  </div>
+</section>
+
+
+<!-- LOCATION -->
+<section id="location" class="page">
+
+  <div class="section-heading">
+    <p class="eyebrow">STAY CONNECTED</p>
+    <h1>Location <span>Sharing</span></h1>
+    <p>Share your current location with someone you trust.</p>
+  </div>
+
+  <div class="panel center">
+    <div class="map-icon">📍</div>
+    <h2>Know Where You Are</h2>
+    <p id="locationDetails">
+      Your location has not been accessed.
+    </p>
+
+    <button class="primary-btn" onclick="getLocation()">
+      Get My Current Location
+    </button>
+
+    <button class="secondary-btn" onclick="shareLocation()">
+      Share My Location
+    </button>
+  </div>
+
+  <div class="notice">
+    Location sharing requires your permission.
+    This demonstration does not track you in the background.
+  </div>
+</section>
+
+
+<!-- SAFETY TIPS -->
+<section id="safety" class="page">
+
+  <div class="section-heading">
+    <p class="eyebrow">BE AWARE. BE PREPARED.</p>
+    <h1>Safety <span>Centre</span></h1>
+    <p>Simple tips to help you make safer decisions.</p>
+  </div>
+
+  <div class="tip-card">
+    <h3>🌙 Night Travel</h3>
+    <p>• Plan your route before leaving.</p>
+    <p>• Keep your phone charged.</p>
+    <p>• Let someone you trust know your journey.</p>
+    <p>• Prefer well-lit and populated routes.</p>
+  </div>
+
+  <div class="tip-card">
+    <h3>🚕 Taxi & Rickshaw Safety</h3>
+    <p>• Check the vehicle and driver details.</p>
+    <p>• Confirm the destination before travelling.</p>
+    <p>• Share your trip details with a trusted person.</p>
+    <p>• If uncomfortable, move to a safe public place.</p>
+  </div>
+
+  <div class="tip-card">
+    <h3>👁 If You Feel Followed</h3>
+    <p>• Avoid going directly home.</p>
+    <p>• Move towards a busy, well-lit place.</p>
+    <p>• Contact someone you trust.</p>
+    <p>• Contact local emergency services if threatened.</p>
+  </div>
+
+  <div class="tip-card">
+    <h3>📱 Digital Safety</h3>
+    <p>• Keep your phone locked.</p>
+    <p>• Do not share your passwords.</p>
+    <p>• Only share location with trusted people.</p>
+  </div>
+</section>
+
+
+<!-- HELP AND FEEDBACK -->
+<section id="help" class="page">
+
+  <div class="section-heading">
+    <p class="eyebrow">WE ARE HERE TO HELP</p>
+    <h1>Help & <span>Guide</span></h1>
+  </div>
+
+  <div class="tip-card">
+    <h3>How to use Safe Haven?</h3>
+    <p>1. Open the Home page.</p>
+    <p>2. Add your trusted contacts.</p>
+    <p>3. Allow location access when needed.</p>
+    <p>4. Use the SOS button in an emergency.</p>
+    <p>5. Contact emergency services when necessary.</p>
+  </div>
+
+  <div class="panel">
+    <h3>Share Your Feedback</h3>
+    <input id="feedbackName" placeholder="Your name">
+    <textarea id="feedbackText"
+      placeholder="Write your experience or suggestion..."></textarea>
+    <button class="primary-btn" onclick="submitFeedback()">
+      Submit Feedback
+    </button>
+  </div>
+
+  <h3 class="subheading">Community Comments</h3>
+  <div id="feedbackList">
+    <p class="empty">No comments yet.</p>
+  </div>
+</section>
+
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="page">
+
+  <div class="section-heading">
+    <p class="eyebrow">EXTRA FEATURES</p>
+    <h1>Our <span>Membership</span></h1>
+    <p>Explore the planned membership options.</p>
+  </div>
+
+  <div class="tip-card">
+    <h2>Free Plan</h2>
+    <h1>Rs. 0</h1>
+    <p>✓ Basic safety tips</p>
+    <p>✓ Emergency guidance</p>
+    <p>✓ Trusted contacts demonstration</p>
+  </div>
+
+  <div class="tip-card featured">
+    <h2>Premium Plan</h2>
+    <h1>Monthly</h1>
+    <p>✓ Planned enhanced safety features</p>
+    <p>✓ Additional support features</p>
+    <p>✓ Future verified-service integration</p>
+    <button class="primary-btn" onclick="showLogin()">
+      Explore Membership
+    </button>
+  </div>
+
+  <p class="empty">
+    Membership and payment are demonstration features only.
+  </p>
+</section>
+
+
+<!-- EMERGENCY MODAL -->
+<div id="sosModal" class="modal">
+  <div class="modal-box">
+    <h1>Emergency Assistance</h1>
+    <p>Are you in immediate danger?</p>
+    <p>Choose an action below.</p>
+
+    <a class="primary-btn call-btn" href="tel:15">
+      Call Police — 15
+    </a>
+
+    <button class="secondary-btn" onclick="shareLocation()">
+      Share Emergency Location
+    </button>
+
+    <button class="close-btn" onclick="closeSOS()">
+      Close
+    </button>
+
+    <small>Only call emergency services when necessary.</small>
+  </div>
+</div>
+
+
+<!-- LOGIN DEMO -->
+<div id="loginModal" class="modal">
+  <div class="modal-box">
+    <h2>Welcome to Safe Haven</h2>
+    <p>Login features will be connected to a secure authentication service.</p>
+    <input placeholder="Email address" type="email">
+    <input placeholder="Password" type="password">
+    <p class="empty">Demo screen — no account is created.</p>
+    <button class="close-btn" onclick="closeLogin()">Close</button>
+  </div>
+</div>
+
+</main>
+
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+  <button onclick="showPage('home')" class="selected">
+    <span>⌂</span>Home
+  </button>
+
+  <button onclick="showPage('contacts')">
+    <span>♙</span>Contacts
+  </button>
+
+  <button onclick="showPage('location')">
+    <span>⌖</span>Location
+  </button>
+
+  <button onclick="showPage('safety')">
+    <span>✧</span>Safety
+  </button>
+
+  <button onclick="showPage('help')">
+    <span>?</span>Help
+  </button>
+</nav>
+
+<footer>
+  <h3>SAFE HAVEN — S.T.A.Y</h3>
+  <p>Support • Trust • Acceptance • You Matter</p>
+  <button onclick="showPage('membership')">Membership</button>
+  <p>© 2026 Safe Haven. All rights reserved.</p>
+</footer>
+
+</body>
+  </html>
+  
